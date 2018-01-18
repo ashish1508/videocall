@@ -18,7 +18,7 @@ app.get('/chat/scall/:pid',function(req,res){
 app.get('/rcall',function(req,res){
   res.render('receive');
 });
-srv = app.listen( process.env.PORT || 8080);
+srv = app.listen(8080);
 
 app.use('/peerjs', require('peer').ExpressPeerServer(srv, {
 	debug: true
