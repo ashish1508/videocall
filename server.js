@@ -2,6 +2,7 @@ var express = require('express')
 var bodyparser = require('body-parser');
 var app = express()
 app.use(bodyparser());
+app.use(express.static(path.join(__dirname, 'uploads')));
 app.set('view engine','ejs');
 // … Configure Express, and register necessary route handlers
 app.get('/chat/home',function(req,res){
