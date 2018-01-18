@@ -1,0 +1,43 @@
+<html>
+<head>
+
+
+</head>
+<body>
+  <h1> welcome to peer</h1>
+
+  <p id ="me"></p>
+  <video autoplay="true" id="videoElement"></video>
+  <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+<script>
+  var peer = new Peer({host: 'localhost', port: 3000, path: '/peerjs'});
+  //console.log('hii');
+  peer.on('open', function(id) {console.log("peerid "+ id) });
+  peer.on('connection', function(conn) {
+    console.log('fuckoff');
+    //sleep(20000);
+    console.log('ashish');
+    //debugger
+    conn.on('open', function() {
+
+          console.log(conn);
+          conn.on('data', function(data) {
+          document.getElementById("me").innerHTML = data;
+         });
+          conn.send('hello macha');
+
+
+
+   });
+console.log(conn.open+': remote peer detected: '+conn.peer);
+conn.on('err',function(err){
+  console.log(err);
+})
+});
+
+
+
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+
+
+</head>
+<body>
+  <h1> welcome to peer2 </h1>
+  <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+<script>
+
+  var peer = new Peer({host: 'localhost', port: 3000, path: '/peerjs'});
+  var conn = peer.connect('<%=id%>');
+  peer.on('open', function(id) {console.log("peerid "+ id) });
+    console.log(conn);
+    conn.on('open', function(){
+    console.log(conn);
+    conn.send('hi!');
+    conn.on('data', function(data) {
+    console.log('Received', data);
+  });
+
+  });
+</script>
+</body>
+</html>
