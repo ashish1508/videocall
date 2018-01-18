@@ -10,7 +10,7 @@
   <video autoplay="true" id="videoElement"></video>
   <script src="peer.min.js"></script>
 <script>
-  var peer = new Peer({host: 'https://safe-cove-23216.herokuapp.com', port: 80, path: '/peerjs'});
+  var peer = new Peer({host: 'https://safe-cove-23216.herokuapp.com', port: ' ', path: '/peerjs'});
   //console.log('hii');
   peer.on('open', function(id) {console.log("peerid "+ id) });
   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
