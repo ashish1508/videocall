@@ -1,6 +1,7 @@
 var express = require('express')
 var bodyparser = require('body-parser');
 var app = express()
+var port = process.env.PORT;
 app.use(bodyparser());
 app.use(express.static('public'));
 app.set('view engine','ejs');
@@ -16,7 +17,7 @@ app.get('/chat/scall/:pid',function(req,res){
   res.render('call',{id:req.params.pid});
 });
 app.get('/rcall',function(req,res){
-  res.render('receive');
+  res.render('receive',{p:port});
 });
 srv = app.listen(process.env.PORT||8080);
 
