@@ -13,7 +13,7 @@ app.get('/chat/:pid',function(req,res){
 	console.log('pid :'+req.params.pid)
   res.render('perr2',{id : req.params.pid});
 });
-app.get('/chat/scall/:pid',function(req,res){
+app.get('/scall/:pid',function(req,res){
   res.render('call',{id:req.params.pid});
 });
 app.get('/rcall',function(req,res){
